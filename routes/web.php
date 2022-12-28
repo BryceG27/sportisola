@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,4 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [PublicController::class, 'home'])->name('home');
